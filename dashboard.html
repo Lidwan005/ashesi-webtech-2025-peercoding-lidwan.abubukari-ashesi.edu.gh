@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Faculty Intern Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <h1 class="logo">Ashesi Attendance Portal</h1>
+      <ul class="nav-links">
+        <li><a href="#" id="navCourses" class="active" onclick="loadCourses()">Courses</a></li>
+        <li><a href="#" id="navSessions" onclick="showSessions()">Sessions</a></li>
+        <li><a href="#" id="navReports" onclick="showReports()">Reports</a></li>
+        <li><a href="login_register.html">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard">
+      <aside aria-label="Quick actions">
+        <h2>Quick Actions</h2>
+        <ul>
+          <li><button onclick="loadCourses()">View Courses</button></li>
+          <li><button onclick="showSessions()">View Sessions</button></li>
+          <li><button onclick="showReports()">View Reports</button></li>
+        </ul>
+      </aside>
+
+      <article id="contentArea" tabindex="0" aria-live="polite">
+        <h2>Welcome, Faculty Intern!</h2>
+        <p>Select a section to view data.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ashesi University | Accessible Dashboard Prototype</p>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
+
+
