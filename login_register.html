@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attendance Management System - Login & Registration</title>
+
+  <!-- Link external stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main>
+    <h1>Attendance Management System</h1>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" aria-label="Login form">
+      <h2>Login</h2>
+
+      <label for="loginEmail">Email</label>
+      <input type="email" id="loginEmail" name="email" required aria-required="true" autocomplete="email" />
+
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" name="password" required aria-required="true" minlength="8" aria-describedby="passwordHelp" />
+      <small id="passwordHelp">Password must be at least 8 characters long.</small>
+
+      <button type="submit">Log In</button>
+
+      <div class="form-switch">
+        <p>Don’t have an account? 
+          <a href="#" onclick="toggleForms('registerForm')">Register here</a>
+        </p>
+      </div>
+    </form>
+
+    <!-- REGISTRATION FORM -->
+    <form id="registerForm" aria-label="Registration form" style="display:none;">
+      <h2>Register</h2>
+
+      <label for="regName">Full Name</label>
+      <input type="text" id="regName" name="name" required aria-required="true" autocomplete="name" />
+
+      <label for="regEmail">Email</label>
+      <input type="email" id="regEmail" name="email" required aria-required="true" autocomplete="email" />
+
+      <label for="regPassword">Password</label>
+      <input type="password" id="regPassword" name="password" required aria-required="true" minlength="8" />
+
+      <label for="regRole">Role</label>
+      <select id="regRole" name="role" required aria-required="true">
+        <option value="">-- Select Role --</option>
+        <option value="faculty">Faculty</option>
+        <option value="intern">Intern</option>
+        <option value="student">Student</option>
+      </select>
+
+      <button type="submit">Register</button>
+
+      <div class="form-switch">
+        <p>Already have an account? 
+          <a href="#" onclick="toggleForms('loginForm')">Log in here</a>
+        </p>
+      </div>
+    </form>
+  </main>
+
+  <!-- Link external script -->
+  <script src="script.js"></script>
+</body>
+</html>
+
