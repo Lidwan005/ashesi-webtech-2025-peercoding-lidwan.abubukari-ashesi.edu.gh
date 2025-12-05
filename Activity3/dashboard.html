@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Intern Dashboard - Attendance System</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Attendance System</h2>
+                <span id="user-role" class="user-role">Faculty Intern</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#courses" class="nav-link active" data-section="courses">Course List</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#sessions" class="nav-link" data-section="sessions">Sessions</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reports" class="nav-link" data-section="reports">Reports</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#observers" class="nav-link" data-section="observers">Observers</a>
+                </li>
+                <li class="nav-item">
+                    <button id="logout-btn" class="logout-btn">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Dashboard Header -->
+        <header class="dashboard-header">
+            <h1 id="dashboard-title">Course List</h1>
+            <div class="user-info">
+                <span id="user-name">Loading...</span>
+                <span id="user-email" class="user-email"></span>
+            </div>
+        </header>
+
+        <!-- Courses Section -->
+        <section id="courses-section" class="content-section active">
+            <div class="section-header">
+                <h2>My Courses</h2>
+                <button class="btn-primary" id="add-course-btn">Add New Course</button>
+            </div>
+            <div class="courses-grid" id="courses-container">
+                <div class="loading">Loading courses...</div>
+            </div>
+        </section>
+
+        <!-- Sessions Section -->
+        <section id="sessions-section" class="content-section">
+            <div class="section-header">
+                <h2>Course Sessions</h2>
+                <button class="btn-primary" id="add-session-btn">Schedule Session</button>
+            </div>
+            <div class="sessions-container" id="sessions-container">
+                <div class="loading">Select a course to view sessions</div>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports-section" class="content-section">
+            <div class="section-header">
+                <h2>Attendance Reports</h2>
+                <button class="btn-primary" id="generate-report-btn">Generate Report</button>
+            </div>
+            <div class="reports-container" id="reports-container">
+                <div class="report-filters">
+                    <select id="report-course-select">
+                        <option value="">Select Course</option>
+                    </select>
+                    <select id="report-type-select">
+                        <option value="weekly">Weekly Report</option>
+                        <option value="monthly">Monthly Report</option>
+                        <option value="semester">Semester Report</option>
+                    </select>
+                    <button class="btn-secondary" id="apply-filters-btn">Apply Filters</button>
+                </div>
+                <div class="report-content" id="report-content">
+                    <div class="loading">Select filters to generate report</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Observers Section -->
+        <section id="observers-section" class="content-section">
+            <div class="section-header">
+                <h2>Course Observers & Auditors</h2>
+                <button class="btn-primary" id="add-observer-btn">Add Observer</button>
+            </div>
+            <div class="observers-container" id="observers-container">
+                <div class="observer-management">
+                    <div class="observer-form">
+                        <h3>Add Observer to Course</h3>
+                        <form id="add-observer-form">
+                            <select id="observer-course-select" required>
+                                <option value="">Select Course</option>
+                            </select>
+                            <input type="email" id="observer-email" placeholder="Observer Email" required>
+                            <select id="observer-role" required>
+                                <option value="auditor">Auditor</option>
+                                <option value="observer">Observer</option>
+                                <option value="guest">Guest Lecturer</option>
+                            </select>
+                            <button type="submit" class="btn-primary">Add Observer</button>
+                        </form>
+                    </div>
+                    <div class="observers-list" id="observers-list">
+                        <div class="loading">Loading observers...</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for adding course -->
+    <div id="course-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add New Course</h3>
+            <form id="course-form">
+                <input type="text" id="course-code" placeholder="Course Code (e.g., CS101)" required>
+                <input type="text" id="course-name" placeholder="Course Name" required>
+                <select id="course-semester" required>
+                    <option value="">Select Semester</option>
+                    <option value="fall">Fall 2024</option>
+                    <option value="spring">Spring 2024</option>
+                    <option value="summer">Summer 2024</option>
+                </select>
+                <input type="number" id="course-credits" placeholder="Credit Hours" min="1" max="6" required>
+                <button type="submit" class="btn-primary">Add Course</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>
