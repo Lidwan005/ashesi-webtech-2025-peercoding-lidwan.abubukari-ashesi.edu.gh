@@ -1,0 +1,111 @@
+<?php
+require 'auth_session.php';
+if (isLoggedIn()) {
+    if ($_SESSION['role'] == 'student') {
+        header("Location: student_dashboard.php");
+    } else {
+        header("Location: faculty_dashboard.php");
+    }
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Management System - Register</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Attendance Management System</h1>
+            <p class="subtitle">Ashesi University</p>
+        </header>
+        
+        <div class="form-container">
+            <!-- Registration Form (Hidden by default) -->
+            <div id="register-section" class="form-section">
+                <div class="form-box">
+                    <h2 class="form-title">Create Account</h2>
+                    <div id="register-success" class="success-message"></div>
+                    <form id="register-form">
+                        <input type="hidden" name="action" value="register">
+                        <div class="form-group">
+                            <label for="register-name">Full Name</label>
+                            <input type="text" id="register-name" name="name" required placeholder="Enter your full name">
+                            <div id="register-name-error" class="error-message"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-email">Email Address</label>
+                            <input type="email" id="register-email" name="email" required placeholder="Enter your email">
+                            <div id="register-email-error" class="error-message"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-password">Password</label>
+                            <input type="password" id="register-password" name="password" minlength="8" required placeholder="Create a password">
+                            <div id="register-password-error" class="error-message"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-confirm-password">Confirm Password</label>
+                            <input type="password" id="register-confirm-password" name="confirm-password" minlength="8" required placeholder="Confirm your password">
+                            <div id="register-confirm-password-error" class="error-message"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="register-role">Role</label>
+                            <select id="register-role" name="role" required>
+                                <option value="">Select your role</option>
+                                <option value="student">Student</option>
+                                <option value="faculty">Faculty</option>
+                                <option value="intern">Faculty Intern</option>
+                            </select>
+                            <div id="register-role-error" class="error-message"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn">Create Account</button>
+                        
+                        <div class="form-footer">
+                            <p>Already have an account? <a href="#" id="show-login-link">Login here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Login Form (Visible by default) -->
+            <div id="login-section" class="form-section active">
+                <div class="form-box">
+                    <h2 class="form-title">Welcome Back</h2>
+                    <div id="login-success" class="success-message"></div>
+                    <form id="login-form">
+                        <input type="hidden" name="action" value="login">
+                        <div class="form-group">
+                            <label for="login-email">Email Address</label>
+                            <input type="email" id="login-email" name="email" required placeholder="Enter your email">
+                            <div id="login-email-error" class="error-message"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="login-password">Password</label>
+                            <input type="password" id="login-password" name="password" minlength="8" required placeholder="Enter your password">
+                            <div id="login-password-error" class="error-message"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn">Login</button>
+                        
+                        <div class="form-footer">
+                            <p>Don't have an account? <a href="#" id="show-register-link">Register here</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/auth.js"></script>
+</body>
+</html>
