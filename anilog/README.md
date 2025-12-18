@@ -2,25 +2,25 @@
 
 AniLog is a high-performance, full-stack anime collection tracker designed for enthusiasts who want to organize their library, monitor episode-by-episode progress, and engage in threaded community discussions.
 
-## � Key Features
+##  Key Features
 
-### 👤 User Experience
+###  User Experience
 - **Smart Dashboard**: At-a-glance analytics showing your watching habits, average ratings, and total consumption.
 - **Custom Profiles**: Personalized profiles with **Profile Picture Uploads** and detailed genre distribution stats.
 - **Admin Controls**: Dedicated administrative role for managing the global anime library and viewing system-wide user stats.
 
-### 📝 Community & Interaction
+###  Community & Interaction
 - **Nested Threaded Replies**: A sophisticated conversation system allowing users to reply to reviews and specific replies, creating deep conversation trees.
 - **Rating & Review System**: Detailed feedback mechanics with 1-10 star ratings and written reviews.
 
-### 📺 Tracking Engine
+###  Tracking Engine
 - **Live Progress Bars**: Real-time visual tracking of your watch progress per anime.
 - **Advanced Filtering**: Categorize your collection by: *Watching, Completed, On-Hold, Dropped,* or *Plan to Watch*.
 - **Collapsible Search**: A modern, sleek search interface for quickly finding titles in your dashboard.
 
 ---
 
-## 🛠️ Technical Stack
+##  Technical Stack
 
 - **Frontend**: Semantic HTML5, CSS3 (Modern Glassmorphism & Vanilla CSS), Vanilla JavaScript (ES6+).
 - **Backend**: PHP 7.4+ (RESTful API architecture for CRUD operations).
@@ -29,7 +29,7 @@ AniLog is a high-performance, full-stack anime collection tracker designed for e
 
 ---
 
-## 🚀 Installation & Local Setup
+## Installation & Local Setup
 
 ### 1. Project Deployment
 Place the project folder in your local server directory (e.g., `C:\xampp\htdocs\anilog\`).
@@ -52,7 +52,7 @@ define('DB_PASS', '');
 
 ---
 
-## ☁️ Deployment Guide (InfinityFree)
+##  Deployment Guide (InfinityFree)
 
 This project is optimized for deployment on free hosting services like **InfinityFree**.
 
@@ -75,7 +75,7 @@ define('DB_PASS', 'wannie1551');
 ```
 ---
 
-## 📁 Project Architecture
+##  Project Architecture
 
 ```
 anilog/
