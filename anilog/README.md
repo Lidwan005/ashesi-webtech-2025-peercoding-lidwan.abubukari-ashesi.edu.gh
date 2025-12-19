@@ -95,6 +95,8 @@ anilog/
 *   **User already registered**: `Sammy` / `Lidwan1551` (you can create your own account if you want)
 
 
+*   **Link to live server**: https://anilog.infinityfreeapp.com/
+
 ---
 
 **Web Technologies Final Project**  
